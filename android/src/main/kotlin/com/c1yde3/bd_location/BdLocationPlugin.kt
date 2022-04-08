@@ -58,5 +58,11 @@ class BdLocationPlugin : FlutterPlugin, BdLocationHostBridge {
 
     }
 
-    override fun setIOSKey(key: String?) {}
+    override fun setIOSKey(key: String) {
+    }
+
+    override fun agreePrivacyAgreement(agree: Boolean) {
+    }
+
+
 }

@@ -13,4 +13,6 @@ abstract class BdLocationHostBridge {
   LocationInfo getLocationInfo();
 
   void setIOSKey(String key);
+
+  void agreePrivacyAgreement(bool agree);
 }

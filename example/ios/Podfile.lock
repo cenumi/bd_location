@@ -2,7 +2,7 @@ PODS:
   - bd_location (0.0.1):
     - BMKLocationKit
     - Flutter
-  - BMKLocationKit (2.0.0)
+  - BMKLocationKit (2.0.2)
   - Flutter (1.0.0)
 
 DEPENDENCIES:
@@ -21,9 +21,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   bd_location: 8e201d7c9c0e5cc8943d60c05c13b613b812583f
-  BMKLocationKit: 097814ef672b1e57e86e6c1968d7892fb78002bf
+  BMKLocationKit: 3b96beefb31c3b12d53e9156aa4ab19ecd695dec
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
