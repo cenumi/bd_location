@@ -15,19 +15,17 @@ class BdLocationPlugin : FlutterPlugin, BdLocationHostBridge {
 
 
     private lateinit var applicationContext: Context
-    private lateinit var locationClient: LocationClient
+    private var locationClient: LocationClient? = null
+    private var locationListener: BDAbstractLocationListener? = null
+
 
     private val locationOption = LocationClientOption().apply {
         setIsNeedAddress(true)
     }
 
-    private var locationListener: BDAbstractLocationListener? = null
-
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         applicationContext = flutterPluginBinding.applicationContext
-        locationClient = LocationClient(applicationContext)
-        locationClient.locOption = locationOption
         BdLocationHostBridge.setup(flutterPluginBinding.binaryMessenger, this)
     }
 
@@ -41,8 +39,8 @@ class BdLocationPlugin : FlutterPlugin, BdLocationHostBridge {
         locationListener = object : BDAbstractLocationListener() {
             override fun onReceiveLocation(location: BDLocation?) {
                 if (location != null) {
-                    locationClient.stop()
-                    locationClient.unRegisterLocationListener(this)
+                    locationClient?.stop()
+                    locationClient?.unRegisterLocationListener(this)
                     locationListener = null
                     result.success(LocationInfo().apply {
                         province = location.province
@@ -53,16 +51,19 @@ class BdLocationPlugin : FlutterPlugin, BdLocationHostBridge {
                 }
             }
         }
-        locationClient.registerLocationListener(locationListener)
-        locationClient.start()
+        locationClient?.registerLocationListener(locationListener)
+        locationClient?.start()
 
     }
 
     override fun setIOSKey(key: String) {
+        // Do Nothing
     }
 
     override fun agreePrivacyAgreement(agree: Boolean) {
+        LocationClient.setAgreePrivacy(agree)
+        locationClient = LocationClient(applicationContext)
+        locationClient?.locOption = locationOption
     }
-
 
 }
