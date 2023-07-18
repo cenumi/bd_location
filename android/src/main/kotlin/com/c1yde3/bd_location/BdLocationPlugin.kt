@@ -38,9 +38,6 @@ class BdLocationPlugin : FlutterPlugin, BdLocationHostBridge {
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         locationListener = null
         BdLocationHostBridge.setup(binding.binaryMessenger, null)
-        URL
-        HttpsURLConnection
-        SSLSocketFactory
     }
 
     override fun getLocationInfo(result: Result<LocationInfo>) {
