@@ -9,6 +9,11 @@ import com.baidu.location.LocationClientOption
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import com.c1yde3.bd_location.Brigde.*
+import java.net.URL
+import java.util.*
+import javax.net.ssl.HttpsURLConnection
+import javax.net.ssl.KeyManager
+import javax.net.ssl.SSLSocketFactory
 
 /** BdLocationPlugin */
 class BdLocationPlugin : FlutterPlugin, BdLocationHostBridge {
@@ -33,6 +38,9 @@ class BdLocationPlugin : FlutterPlugin, BdLocationHostBridge {
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         locationListener = null
         BdLocationHostBridge.setup(binding.binaryMessenger, null)
+        URL
+        HttpsURLConnection
+        SSLSocketFactory
     }
 
     override fun getLocationInfo(result: Result<LocationInfo>) {

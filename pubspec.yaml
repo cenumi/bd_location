@@ -1,11 +1,11 @@
 name: bd_location
 description: baidu location
-version: 0.0.2
+version: 0.0.5
 homepage: https://github.com/cenumi/bd_location
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.20.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
