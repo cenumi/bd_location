@@ -15,7 +15,7 @@ baidu location
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'BMKLocationKit', '~> 2.0.9'
+  s.dependency 'BMKLocationKit', '2.0.9'
 
   s.platform = :ios, '8.0'
   s.static_framework = true
